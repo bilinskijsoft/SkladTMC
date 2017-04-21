@@ -49,31 +49,31 @@ Partial Public Class dbDataSet
     
     Private tableЧтоСписывается As ЧтоСписываетсяDataTable
     
-    Private relationМОЛВнутреннееПеремещениеТМЦ As Global.System.Data.DataRelation
-    
-    Private relationПодразделенияВнутреннееПеремещениеТМЦ As Global.System.Data.DataRelation
-    
-    Private relationМОЛПриходТМЦ As Global.System.Data.DataRelation
-    
-    Private relationПодразделенияПриходТМЦ As Global.System.Data.DataRelation
-    
-    Private relationПоставщикиПриходТМЦ As Global.System.Data.DataRelation
-    
     Private relationПереоценкаТМЦЧтоПеремещается As Global.System.Data.DataRelation
     
     Private relationТМЦЧтоПеремещается As Global.System.Data.DataRelation
     
-    Private relationВнутреннееПеремещениеТМЦЧтоПереоценивается As Global.System.Data.DataRelation
-    
     Private relationТМЦЧтоПереоценивается As Global.System.Data.DataRelation
-    
-    Private relationПриходТМЦЧтоПиришло As Global.System.Data.DataRelation
     
     Private relationТМЦЧтоПиришло As Global.System.Data.DataRelation
     
     Private relationСписаниеТМЦЧтоСписывается As Global.System.Data.DataRelation
     
     Private relationТМЦЧтоСписывается As Global.System.Data.DataRelation
+    
+    Private relationПоставщики_ПриходТМЦ As Global.System.Data.DataRelation
+    
+    Private relationПриходТМЦ_ЧтоПиришло As Global.System.Data.DataRelation
+    
+    Private relationМОЛ_ПриходТМЦ As Global.System.Data.DataRelation
+    
+    Private relationПодразделения_ПриходТМЦ As Global.System.Data.DataRelation
+    
+    Private relationМОЛ_ВнутреннееПеремещениеТМЦ As Global.System.Data.DataRelation
+    
+    Private relationПодразделения_ВнутреннееПеремещениеТМЦ As Global.System.Data.DataRelation
+    
+    Private relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -484,19 +484,19 @@ Partial Public Class dbDataSet
                 Me.tableЧтоСписывается.InitVars
             End If
         End If
-        Me.relationМОЛВнутреннееПеремещениеТМЦ = Me.Relations("МОЛВнутреннееПеремещениеТМЦ")
-        Me.relationПодразделенияВнутреннееПеремещениеТМЦ = Me.Relations("ПодразделенияВнутреннееПеремещениеТМЦ")
-        Me.relationМОЛПриходТМЦ = Me.Relations("МОЛПриходТМЦ")
-        Me.relationПодразделенияПриходТМЦ = Me.Relations("ПодразделенияПриходТМЦ")
-        Me.relationПоставщикиПриходТМЦ = Me.Relations("ПоставщикиПриходТМЦ")
         Me.relationПереоценкаТМЦЧтоПеремещается = Me.Relations("ПереоценкаТМЦЧтоПеремещается")
         Me.relationТМЦЧтоПеремещается = Me.Relations("ТМЦЧтоПеремещается")
-        Me.relationВнутреннееПеремещениеТМЦЧтоПереоценивается = Me.Relations("ВнутреннееПеремещениеТМЦЧтоПереоценивается")
         Me.relationТМЦЧтоПереоценивается = Me.Relations("ТМЦЧтоПереоценивается")
-        Me.relationПриходТМЦЧтоПиришло = Me.Relations("ПриходТМЦЧтоПиришло")
         Me.relationТМЦЧтоПиришло = Me.Relations("ТМЦЧтоПиришло")
         Me.relationСписаниеТМЦЧтоСписывается = Me.Relations("СписаниеТМЦЧтоСписывается")
         Me.relationТМЦЧтоСписывается = Me.Relations("ТМЦЧтоСписывается")
+        Me.relationПоставщики_ПриходТМЦ = Me.Relations("Поставщики_ПриходТМЦ")
+        Me.relationПриходТМЦ_ЧтоПиришло = Me.Relations("ПриходТМЦ_ЧтоПиришло")
+        Me.relationМОЛ_ПриходТМЦ = Me.Relations("МОЛ_ПриходТМЦ")
+        Me.relationПодразделения_ПриходТМЦ = Me.Relations("Подразделения_ПриходТМЦ")
+        Me.relationМОЛ_ВнутреннееПеремещениеТМЦ = Me.Relations("МОЛ_ВнутреннееПеремещениеТМЦ")
+        Me.relationПодразделения_ВнутреннееПеремещениеТМЦ = Me.Relations("Подразделения_ВнутреннееПеремещениеТМЦ")
+        Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается = Me.Relations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -531,32 +531,32 @@ Partial Public Class dbDataSet
         MyBase.Tables.Add(Me.tableЧтоПиришло)
         Me.tableЧтоСписывается = New ЧтоСписываетсяDataTable()
         MyBase.Tables.Add(Me.tableЧтоСписывается)
-        Me.relationМОЛВнутреннееПеремещениеТМЦ = New Global.System.Data.DataRelation("МОЛВнутреннееПеремещениеТМЦ", New Global.System.Data.DataColumn() {Me.tableМОЛ.КодМОЛColumn}, New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.ОткудаМОЛColumn}, false)
-        Me.Relations.Add(Me.relationМОЛВнутреннееПеремещениеТМЦ)
-        Me.relationПодразделенияВнутреннееПеремещениеТМЦ = New Global.System.Data.DataRelation("ПодразделенияВнутреннееПеремещениеТМЦ", New Global.System.Data.DataColumn() {Me.tableПодразделения.КодПодразделенияColumn}, New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.ОткудаПодразделениеColumn}, false)
-        Me.Relations.Add(Me.relationПодразделенияВнутреннееПеремещениеТМЦ)
-        Me.relationМОЛПриходТМЦ = New Global.System.Data.DataRelation("МОЛПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableМОЛ.КодМОЛColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.МОЛColumn}, false)
-        Me.Relations.Add(Me.relationМОЛПриходТМЦ)
-        Me.relationПодразделенияПриходТМЦ = New Global.System.Data.DataRelation("ПодразделенияПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableПодразделения.КодПодразделенияColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.ПодразделениеColumn}, false)
-        Me.Relations.Add(Me.relationПодразделенияПриходТМЦ)
-        Me.relationПоставщикиПриходТМЦ = New Global.System.Data.DataRelation("ПоставщикиПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableПоставщики.КодПоставщикаColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.ПоставщикColumn}, false)
-        Me.Relations.Add(Me.relationПоставщикиПриходТМЦ)
         Me.relationПереоценкаТМЦЧтоПеремещается = New Global.System.Data.DataRelation("ПереоценкаТМЦЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableПереоценкаТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.__ДокументаColumn}, false)
         Me.Relations.Add(Me.relationПереоценкаТМЦЧтоПеремещается)
         Me.relationТМЦЧтоПеремещается = New Global.System.Data.DataRelation("ТМЦЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.ИнвентарныйНомерColumn}, false)
         Me.Relations.Add(Me.relationТМЦЧтоПеремещается)
-        Me.relationВнутреннееПеремещениеТМЦЧтоПереоценивается = New Global.System.Data.DataRelation("ВнутреннееПеремещениеТМЦЧтоПереоценивается", New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПереоценивается.__ДокументаColumn}, false)
-        Me.Relations.Add(Me.relationВнутреннееПеремещениеТМЦЧтоПереоценивается)
         Me.relationТМЦЧтоПереоценивается = New Global.System.Data.DataRelation("ТМЦЧтоПереоценивается", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПереоценивается.ИнвентарныйНомерColumn}, false)
         Me.Relations.Add(Me.relationТМЦЧтоПереоценивается)
-        Me.relationПриходТМЦЧтоПиришло = New Global.System.Data.DataRelation("ПриходТМЦЧтоПиришло", New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПиришло.__ДокументаColumn}, false)
-        Me.Relations.Add(Me.relationПриходТМЦЧтоПиришло)
         Me.relationТМЦЧтоПиришло = New Global.System.Data.DataRelation("ТМЦЧтоПиришло", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПиришло.ИнвентарныйНомерColumn}, false)
         Me.Relations.Add(Me.relationТМЦЧтоПиришло)
         Me.relationСписаниеТМЦЧтоСписывается = New Global.System.Data.DataRelation("СписаниеТМЦЧтоСписывается", New Global.System.Data.DataColumn() {Me.tableСписаниеТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоСписывается.__ДокументаColumn}, false)
         Me.Relations.Add(Me.relationСписаниеТМЦЧтоСписывается)
         Me.relationТМЦЧтоСписывается = New Global.System.Data.DataRelation("ТМЦЧтоСписывается", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоСписывается.ИнвентарныйНомерColumn}, false)
         Me.Relations.Add(Me.relationТМЦЧтоСписывается)
+        Me.relationПоставщики_ПриходТМЦ = New Global.System.Data.DataRelation("Поставщики_ПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableПоставщики.КодПоставщикаColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.ПоставщикColumn}, false)
+        Me.Relations.Add(Me.relationПоставщики_ПриходТМЦ)
+        Me.relationПриходТМЦ_ЧтоПиришло = New Global.System.Data.DataRelation("ПриходТМЦ_ЧтоПиришло", New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПиришло.__ДокументаColumn}, false)
+        Me.Relations.Add(Me.relationПриходТМЦ_ЧтоПиришло)
+        Me.relationМОЛ_ПриходТМЦ = New Global.System.Data.DataRelation("МОЛ_ПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableМОЛ.КодМОЛColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.МОЛColumn}, false)
+        Me.Relations.Add(Me.relationМОЛ_ПриходТМЦ)
+        Me.relationПодразделения_ПриходТМЦ = New Global.System.Data.DataRelation("Подразделения_ПриходТМЦ", New Global.System.Data.DataColumn() {Me.tableПодразделения.КодПодразделенияColumn}, New Global.System.Data.DataColumn() {Me.tableПриходТМЦ.ПодразделениеColumn}, false)
+        Me.Relations.Add(Me.relationПодразделения_ПриходТМЦ)
+        Me.relationМОЛ_ВнутреннееПеремещениеТМЦ = New Global.System.Data.DataRelation("МОЛ_ВнутреннееПеремещениеТМЦ", New Global.System.Data.DataColumn() {Me.tableМОЛ.КодМОЛColumn}, New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.ОткудаМОЛColumn}, false)
+        Me.Relations.Add(Me.relationМОЛ_ВнутреннееПеремещениеТМЦ)
+        Me.relationПодразделения_ВнутреннееПеремещениеТМЦ = New Global.System.Data.DataRelation("Подразделения_ВнутреннееПеремещениеТМЦ", New Global.System.Data.DataColumn() {Me.tableПодразделения.КодПодразделенияColumn}, New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.ОткудаПодразделениеColumn}, false)
+        Me.Relations.Add(Me.relationПодразделения_ВнутреннееПеремещениеТМЦ)
+        Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается = New Global.System.Data.DataRelation("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.__ДокументаColumn}, false)
+        Me.Relations.Add(Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -865,14 +865,14 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddВнутреннееПеремещениеТМЦRow(ByVal Дата As Date, ByVal parentПодразделенияRowByПодразделенияВнутреннееПеремещениеТМЦ As ПодразделенияRow, ByVal parentМОЛRowByМОЛВнутреннееПеремещениеТМЦ As МОЛRow, ByVal КудаПодразделение As Integer, ByVal КудаМОЛ As Integer) As ВнутреннееПеремещениеТМЦRow
+        Public Overloads Function AddВнутреннееПеремещениеТМЦRow(ByVal Дата As Date, ByVal parentПодразделенияRowByПодразделения_ВнутреннееПеремещениеТМЦ As ПодразделенияRow, ByVal parentМОЛRowByМОЛ_ВнутреннееПеремещениеТМЦ As МОЛRow, ByVal КудаПодразделение As Integer, ByVal КудаМОЛ As Integer) As ВнутреннееПеремещениеТМЦRow
             Dim rowВнутреннееПеремещениеТМЦRow As ВнутреннееПеремещениеТМЦRow = CType(Me.NewRow,ВнутреннееПеремещениеТМЦRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Дата, Nothing, Nothing, КудаПодразделение, КудаМОЛ}
-            If (Not (parentПодразделенияRowByПодразделенияВнутреннееПеремещениеТМЦ) Is Nothing) Then
-                columnValuesArray(2) = parentПодразделенияRowByПодразделенияВнутреннееПеремещениеТМЦ(0)
+            If (Not (parentПодразделенияRowByПодразделения_ВнутреннееПеремещениеТМЦ) Is Nothing) Then
+                columnValuesArray(2) = parentПодразделенияRowByПодразделения_ВнутреннееПеремещениеТМЦ(0)
             End If
-            If (Not (parentМОЛRowByМОЛВнутреннееПеремещениеТМЦ) Is Nothing) Then
-                columnValuesArray(3) = parentМОЛRowByМОЛВнутреннееПеремещениеТМЦ(0)
+            If (Not (parentМОЛRowByМОЛ_ВнутреннееПеремещениеТМЦ) Is Nothing) Then
+                columnValuesArray(3) = parentМОЛRowByМОЛ_ВнутреннееПеремещениеТМЦ(0)
             End If
             rowВнутреннееПеремещениеТМЦRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowВнутреннееПеремещениеТМЦRow)
@@ -2305,17 +2305,17 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddПриходТМЦRow(ByVal Дата As Date, ByVal parentПоставщикиRowByПоставщикиПриходТМЦ As ПоставщикиRow, ByVal parentПодразделенияRowByПодразделенияПриходТМЦ As ПодразделенияRow, ByVal parentМОЛRowByМОЛПриходТМЦ As МОЛRow) As ПриходТМЦRow
+        Public Overloads Function AddПриходТМЦRow(ByVal Дата As Date, ByVal parentПоставщикиRowByПоставщики_ПриходТМЦ As ПоставщикиRow, ByVal parentПодразделенияRowByПодразделения_ПриходТМЦ As ПодразделенияRow, ByVal parentМОЛRowByМОЛ_ПриходТМЦ As МОЛRow) As ПриходТМЦRow
             Dim rowПриходТМЦRow As ПриходТМЦRow = CType(Me.NewRow,ПриходТМЦRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Дата, Nothing, Nothing, Nothing}
-            If (Not (parentПоставщикиRowByПоставщикиПриходТМЦ) Is Nothing) Then
-                columnValuesArray(2) = parentПоставщикиRowByПоставщикиПриходТМЦ(0)
+            If (Not (parentПоставщикиRowByПоставщики_ПриходТМЦ) Is Nothing) Then
+                columnValuesArray(2) = parentПоставщикиRowByПоставщики_ПриходТМЦ(0)
             End If
-            If (Not (parentПодразделенияRowByПодразделенияПриходТМЦ) Is Nothing) Then
-                columnValuesArray(3) = parentПодразделенияRowByПодразделенияПриходТМЦ(0)
+            If (Not (parentПодразделенияRowByПодразделения_ПриходТМЦ) Is Nothing) Then
+                columnValuesArray(3) = parentПодразделенияRowByПодразделения_ПриходТМЦ(0)
             End If
-            If (Not (parentМОЛRowByМОЛПриходТМЦ) Is Nothing) Then
-                columnValuesArray(4) = parentМОЛRowByМОЛПриходТМЦ(0)
+            If (Not (parentМОЛRowByМОЛ_ПриходТМЦ) Is Nothing) Then
+                columnValuesArray(4) = parentМОЛRowByМОЛ_ПриходТМЦ(0)
             End If
             rowПриходТМЦRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowПриходТМЦRow)
@@ -3556,12 +3556,9 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddЧтоПереоцениваетсяRow(ByVal parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦЧтоПереоценивается As ВнутреннееПеремещениеТМЦRow, ByVal parentТМЦRowByТМЦЧтоПереоценивается As ТМЦRow, ByVal СтараяЦена As Integer, ByVal НоваяЦена As Integer) As ЧтоПереоцениваетсяRow
+        Public Overloads Function AddЧтоПереоцениваетсяRow(ByVal __Документа As Integer, ByVal parentТМЦRowByТМЦЧтоПереоценивается As ТМЦRow, ByVal СтараяЦена As Integer, ByVal НоваяЦена As Integer) As ЧтоПереоцениваетсяRow
             Dim rowЧтоПереоцениваетсяRow As ЧтоПереоцениваетсяRow = CType(Me.NewRow,ЧтоПереоцениваетсяRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, СтараяЦена, НоваяЦена}
-            If (Not (parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦЧтоПереоценивается) Is Nothing) Then
-                columnValuesArray(0) = parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦЧтоПереоценивается(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {__Документа, Nothing, СтараяЦена, НоваяЦена}
             If (Not (parentТМЦRowByТМЦЧтоПереоценивается) Is Nothing) Then
                 columnValuesArray(1) = parentТМЦRowByТМЦЧтоПереоценивается(0)
             End If
@@ -3854,11 +3851,11 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddЧтоПиришлоRow(ByVal parentПриходТМЦRowByПриходТМЦЧтоПиришло As ПриходТМЦRow, ByVal parentТМЦRowByТМЦЧтоПиришло As ТМЦRow, ByVal Цена As Integer) As ЧтоПиришлоRow
+        Public Overloads Function AddЧтоПиришлоRow(ByVal parentПриходТМЦRowByПриходТМЦ_ЧтоПиришло As ПриходТМЦRow, ByVal parentТМЦRowByТМЦЧтоПиришло As ТМЦRow, ByVal Цена As Integer) As ЧтоПиришлоRow
             Dim rowЧтоПиришлоRow As ЧтоПиришлоRow = CType(Me.NewRow,ЧтоПиришлоRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Цена}
-            If (Not (parentПриходТМЦRowByПриходТМЦЧтоПиришло) Is Nothing) Then
-                columnValuesArray(0) = parentПриходТМЦRowByПриходТМЦЧтоПиришло(0)
+            If (Not (parentПриходТМЦRowByПриходТМЦ_ЧтоПиришло) Is Nothing) Then
+                columnValuesArray(0) = parentПриходТМЦRowByПриходТМЦ_ЧтоПиришло(0)
             End If
             If (Not (parentТМЦRowByТМЦЧтоПиришло) Is Nothing) Then
                 columnValuesArray(1) = parentТМЦRowByТМЦЧтоПиришло(0)
@@ -4443,10 +4440,10 @@ Partial Public Class dbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property МОЛRow() As МОЛRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("МОЛВнутреннееПеремещениеТМЦ")),МОЛRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("МОЛ_ВнутреннееПеремещениеТМЦ")),МОЛRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("МОЛВнутреннееПеремещениеТМЦ"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("МОЛ_ВнутреннееПеремещениеТМЦ"))
             End Set
         End Property
         
@@ -4454,10 +4451,10 @@ Partial Public Class dbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ПодразделенияRow() As ПодразделенияRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПодразделенияВнутреннееПеремещениеТМЦ")),ПодразделенияRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("Подразделения_ВнутреннееПеремещениеТМЦ")),ПодразделенияRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ПодразделенияВнутреннееПеремещениеТМЦ"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("Подразделения_ВнутреннееПеремещениеТМЦ"))
             End Set
         End Property
         
@@ -4523,11 +4520,11 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetЧтоПереоцениваетсяRows() As ЧтоПереоцениваетсяRow()
-            If (Me.Table.ChildRelations("ВнутреннееПеремещениеТМЦЧтоПереоценивается") Is Nothing) Then
-                Return New ЧтоПереоцениваетсяRow(-1) {}
+        Public Function GetЧтоПеремещаетсяRows() As ЧтоПеремещаетсяRow()
+            If (Me.Table.ChildRelations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается") Is Nothing) Then
+                Return New ЧтоПеремещаетсяRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ВнутреннееПеремещениеТМЦЧтоПереоценивается")),ЧтоПереоцениваетсяRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается")),ЧтоПеремещаетсяRow())
             End If
         End Function
     End Class
@@ -4587,21 +4584,21 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetВнутреннееПеремещениеТМЦRows() As ВнутреннееПеремещениеТМЦRow()
-            If (Me.Table.ChildRelations("МОЛВнутреннееПеремещениеТМЦ") Is Nothing) Then
-                Return New ВнутреннееПеремещениеТМЦRow(-1) {}
+        Public Function GetПриходТМЦRows() As ПриходТМЦRow()
+            If (Me.Table.ChildRelations("МОЛ_ПриходТМЦ") Is Nothing) Then
+                Return New ПриходТМЦRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("МОЛВнутреннееПеремещениеТМЦ")),ВнутреннееПеремещениеТМЦRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("МОЛ_ПриходТМЦ")),ПриходТМЦRow())
             End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetПриходТМЦRows() As ПриходТМЦRow()
-            If (Me.Table.ChildRelations("МОЛПриходТМЦ") Is Nothing) Then
-                Return New ПриходТМЦRow(-1) {}
+        Public Function GetВнутреннееПеремещениеТМЦRows() As ВнутреннееПеремещениеТМЦRow()
+            If (Me.Table.ChildRelations("МОЛ_ВнутреннееПеремещениеТМЦ") Is Nothing) Then
+                Return New ВнутреннееПеремещениеТМЦRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("МОЛПриходТМЦ")),ПриходТМЦRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("МОЛ_ВнутреннееПеремещениеТМЦ")),ВнутреннееПеремещениеТМЦRow())
             End If
         End Function
     End Class
@@ -4725,21 +4722,21 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetВнутреннееПеремещениеТМЦRows() As ВнутреннееПеремещениеТМЦRow()
-            If (Me.Table.ChildRelations("ПодразделенияВнутреннееПеремещениеТМЦ") Is Nothing) Then
-                Return New ВнутреннееПеремещениеТМЦRow(-1) {}
+        Public Function GetПриходТМЦRows() As ПриходТМЦRow()
+            If (Me.Table.ChildRelations("Подразделения_ПриходТМЦ") Is Nothing) Then
+                Return New ПриходТМЦRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПодразделенияВнутреннееПеремещениеТМЦ")),ВнутреннееПеремещениеТМЦRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Подразделения_ПриходТМЦ")),ПриходТМЦRow())
             End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetПриходТМЦRows() As ПриходТМЦRow()
-            If (Me.Table.ChildRelations("ПодразделенияПриходТМЦ") Is Nothing) Then
-                Return New ПриходТМЦRow(-1) {}
+        Public Function GetВнутреннееПеремещениеТМЦRows() As ВнутреннееПеремещениеТМЦRow()
+            If (Me.Table.ChildRelations("Подразделения_ВнутреннееПеремещениеТМЦ") Is Nothing) Then
+                Return New ВнутреннееПеремещениеТМЦRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПодразделенияПриходТМЦ")),ПриходТМЦRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Подразделения_ВнутреннееПеремещениеТМЦ")),ВнутреннееПеремещениеТМЦRow())
             End If
         End Function
     End Class
@@ -4800,10 +4797,10 @@ Partial Public Class dbDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function GetПриходТМЦRows() As ПриходТМЦRow()
-            If (Me.Table.ChildRelations("ПоставщикиПриходТМЦ") Is Nothing) Then
+            If (Me.Table.ChildRelations("Поставщики_ПриходТМЦ") Is Nothing) Then
                 Return New ПриходТМЦRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПоставщикиПриходТМЦ")),ПриходТМЦRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Поставщики_ПриходТМЦ")),ПриходТМЦRow())
             End If
         End Function
     End Class
@@ -4896,12 +4893,23 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property МОЛRow() As МОЛRow
+        Public Property ПоставщикиRow() As ПоставщикиRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("МОЛПриходТМЦ")),МОЛRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("Поставщики_ПриходТМЦ")),ПоставщикиRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("МОЛПриходТМЦ"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("Поставщики_ПриходТМЦ"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property МОЛRow() As МОЛRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("МОЛ_ПриходТМЦ")),МОЛRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("МОЛ_ПриходТМЦ"))
             End Set
         End Property
         
@@ -4909,21 +4917,10 @@ Partial Public Class dbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ПодразделенияRow() As ПодразделенияRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПодразделенияПриходТМЦ")),ПодразделенияRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("Подразделения_ПриходТМЦ")),ПодразделенияRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ПодразделенияПриходТМЦ"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ПоставщикиRow() As ПоставщикиRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПоставщикиПриходТМЦ")),ПоставщикиRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ПоставщикиПриходТМЦ"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("Подразделения_ПриходТМЦ"))
             End Set
         End Property
         
@@ -4978,10 +4975,10 @@ Partial Public Class dbDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function GetЧтоПиришлоRows() As ЧтоПиришлоRow()
-            If (Me.Table.ChildRelations("ПриходТМЦЧтоПиришло") Is Nothing) Then
+            If (Me.Table.ChildRelations("ПриходТМЦ_ЧтоПиришло") Is Nothing) Then
                 Return New ЧтоПиришлоRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПриходТМЦЧтоПиришло")),ЧтоПиришлоRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПриходТМЦ_ЧтоПиришло")),ЧтоПиришлоRow())
             End If
         End Function
     End Class
@@ -5387,6 +5384,17 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ВнутреннееПеремещениеТМЦRow() As ВнутреннееПеремещениеТМЦRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается")),ВнутреннееПеремещениеТМЦRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsИнвентарныйНомерNull() As Boolean
             Return Me.IsNull(Me.tableЧтоПеремещается.ИнвентарныйНомерColumn)
         End Function
@@ -5479,17 +5487,6 @@ Partial Public Class dbDataSet
             End Get
             Set
                 Me(Me.tableЧтоПереоценивается.НоваяЦенаColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ВнутреннееПеремещениеТМЦRow() As ВнутреннееПеремещениеТМЦRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ВнутреннееПеремещениеТМЦЧтоПереоценивается")),ВнутреннееПеремещениеТМЦRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ВнутреннееПеремещениеТМЦЧтоПереоценивается"))
             End Set
         End Property
         
@@ -5599,23 +5596,23 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ПриходТМЦRow() As ПриходТМЦRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПриходТМЦЧтоПиришло")),ПриходТМЦRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ПриходТМЦЧтоПиришло"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ТМЦRow() As ТМЦRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("ТМЦЧтоПиришло")),ТМЦRow)
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("ТМЦЧтоПиришло"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ПриходТМЦRow() As ПриходТМЦRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПриходТМЦ_ЧтоПиришло")),ПриходТМЦRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("ПриходТМЦ_ЧтоПиришло"))
             End Set
         End Property
         
@@ -6376,7 +6373,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6783,7 +6780,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7093,7 +7090,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7403,7 +7400,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7713,7 +7710,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8050,7 +8047,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8432,7 +8429,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8796,7 +8793,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9264,7 +9261,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9646,7 +9643,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10043,7 +10040,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10416,7 +10413,7 @@ Namespace dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString
+            Me._connection.ConnectionString = Global.Sklad_TMC.My.MySettings.Default.dbConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

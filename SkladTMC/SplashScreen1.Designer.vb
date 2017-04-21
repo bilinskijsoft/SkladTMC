@@ -94,12 +94,12 @@ Partial Class SplashScreen1
         '
         'ApplicationTitle
         '
-        Me.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
         Me.ApplicationTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ApplicationTitle.Location = New System.Drawing.Point(246, 24)
+        Me.ApplicationTitle.ForeColor = System.Drawing.Color.White
+        Me.ApplicationTitle.Location = New System.Drawing.Point(246, 0)
         Me.ApplicationTitle.Name = "ApplicationTitle"
-        Me.ApplicationTitle.Size = New System.Drawing.Size(247, 212)
+        Me.ApplicationTitle.Size = New System.Drawing.Size(247, 223)
         Me.ApplicationTitle.TabIndex = 0
         Me.ApplicationTitle.Text = "Заголовок приложения"
         Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.BottomLeft
