@@ -126,16 +126,28 @@
     <Compile Include="frmGolovna.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTMC.Designer.vb">
+    <Compile Include="Glavnaya\frmTMC.Designer.vb">
       <DependentUpon>frmTMC.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmTMC.vb">
+    <Compile Include="Glavnaya\frmTMC.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nakladnie\frmPeremishenya.Designer.vb">
       <DependentUpon>frmPeremishenya.vb</DependentUpon>
     </Compile>
     <Compile Include="Nakladnie\frmPeremishenya.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nakladnie\frmPereocinka.Designer.vb">
+      <DependentUpon>frmPereocinka.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nakladnie\frmPereocinka.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nakladnie\frmSpisanya.Designer.vb">
+      <DependentUpon>frmSpisanya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nakladnie\frmSpisanya.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Spravochinki\frmMOL.Designer.vb">
@@ -200,11 +212,17 @@
     <EmbeddedResource Include="frmGolovna.resx">
       <DependentUpon>frmGolovna.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTMC.resx">
+    <EmbeddedResource Include="Glavnaya\frmTMC.resx">
       <DependentUpon>frmTMC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nakladnie\frmPeremishenya.resx">
       <DependentUpon>frmPeremishenya.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nakladnie\frmPereocinka.resx">
+      <DependentUpon>frmPereocinka.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nakladnie\frmSpisanya.resx">
+      <DependentUpon>frmSpisanya.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Spravochinki\frmMOL.resx">
       <DependentUpon>frmMOL.vb</DependentUpon>
@@ -281,6 +299,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -49,8 +49,6 @@ Partial Public Class dbDataSet
     
     Private tableЧтоСписывается As ЧтоСписываетсяDataTable
     
-    Private relationПереоценкаТМЦЧтоПеремещается As Global.System.Data.DataRelation
-    
     Private relationТМЦЧтоПеремещается As Global.System.Data.DataRelation
     
     Private relationТМЦЧтоПереоценивается As Global.System.Data.DataRelation
@@ -74,6 +72,8 @@ Partial Public Class dbDataSet
     Private relationПодразделения_ВнутреннееПеремещениеТМЦ As Global.System.Data.DataRelation
     
     Private relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается As Global.System.Data.DataRelation
+    
+    Private relationЧтоПереоценивается_ПереоценкаТМЦ As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -484,7 +484,6 @@ Partial Public Class dbDataSet
                 Me.tableЧтоСписывается.InitVars
             End If
         End If
-        Me.relationПереоценкаТМЦЧтоПеремещается = Me.Relations("ПереоценкаТМЦЧтоПеремещается")
         Me.relationТМЦЧтоПеремещается = Me.Relations("ТМЦЧтоПеремещается")
         Me.relationТМЦЧтоПереоценивается = Me.Relations("ТМЦЧтоПереоценивается")
         Me.relationТМЦЧтоПиришло = Me.Relations("ТМЦЧтоПиришло")
@@ -497,6 +496,7 @@ Partial Public Class dbDataSet
         Me.relationМОЛ_ВнутреннееПеремещениеТМЦ = Me.Relations("МОЛ_ВнутреннееПеремещениеТМЦ")
         Me.relationПодразделения_ВнутреннееПеремещениеТМЦ = Me.Relations("Подразделения_ВнутреннееПеремещениеТМЦ")
         Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается = Me.Relations("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается")
+        Me.relationЧтоПереоценивается_ПереоценкаТМЦ = Me.Relations("ЧтоПереоценивается_ПереоценкаТМЦ")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -531,8 +531,6 @@ Partial Public Class dbDataSet
         MyBase.Tables.Add(Me.tableЧтоПиришло)
         Me.tableЧтоСписывается = New ЧтоСписываетсяDataTable()
         MyBase.Tables.Add(Me.tableЧтоСписывается)
-        Me.relationПереоценкаТМЦЧтоПеремещается = New Global.System.Data.DataRelation("ПереоценкаТМЦЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableПереоценкаТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.__ДокументаColumn}, false)
-        Me.Relations.Add(Me.relationПереоценкаТМЦЧтоПеремещается)
         Me.relationТМЦЧтоПеремещается = New Global.System.Data.DataRelation("ТМЦЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.ИнвентарныйНомерColumn}, false)
         Me.Relations.Add(Me.relationТМЦЧтоПеремещается)
         Me.relationТМЦЧтоПереоценивается = New Global.System.Data.DataRelation("ТМЦЧтоПереоценивается", New Global.System.Data.DataColumn() {Me.tableТМЦ.ИнвентарныйНомерColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПереоценивается.ИнвентарныйНомерColumn}, false)
@@ -557,6 +555,8 @@ Partial Public Class dbDataSet
         Me.Relations.Add(Me.relationПодразделения_ВнутреннееПеремещениеТМЦ)
         Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается = New Global.System.Data.DataRelation("ВнутреннееПеремещениеТМЦ_ЧтоПеремещается", New Global.System.Data.DataColumn() {Me.tableВнутреннееПеремещениеТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПеремещается.__ДокументаColumn}, false)
         Me.Relations.Add(Me.relationВнутреннееПеремещениеТМЦ_ЧтоПеремещается)
+        Me.relationЧтоПереоценивается_ПереоценкаТМЦ = New Global.System.Data.DataRelation("ЧтоПереоценивается_ПереоценкаТМЦ", New Global.System.Data.DataColumn() {Me.tableПереоценкаТМЦ.__ДокументаColumn}, New Global.System.Data.DataColumn() {Me.tableЧтоПереоценивается.__ДокументаColumn}, false)
+        Me.Relations.Add(Me.relationЧтоПереоценивается_ПереоценкаТМЦ)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3251,11 +3251,11 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddЧтоПеремещаетсяRow(ByVal parentПереоценкаТМЦRowByПереоценкаТМЦЧтоПеремещается As ПереоценкаТМЦRow, ByVal parentТМЦRowByТМЦЧтоПеремещается As ТМЦRow, ByVal ЦенаПеремещения As Integer) As ЧтоПеремещаетсяRow
+        Public Overloads Function AddЧтоПеремещаетсяRow(ByVal parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦ_ЧтоПеремещается As ВнутреннееПеремещениеТМЦRow, ByVal parentТМЦRowByТМЦЧтоПеремещается As ТМЦRow, ByVal ЦенаПеремещения As Integer) As ЧтоПеремещаетсяRow
             Dim rowЧтоПеремещаетсяRow As ЧтоПеремещаетсяRow = CType(Me.NewRow,ЧтоПеремещаетсяRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, ЦенаПеремещения}
-            If (Not (parentПереоценкаТМЦRowByПереоценкаТМЦЧтоПеремещается) Is Nothing) Then
-                columnValuesArray(0) = parentПереоценкаТМЦRowByПереоценкаТМЦЧтоПеремещается(0)
+            If (Not (parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦ_ЧтоПеремещается) Is Nothing) Then
+                columnValuesArray(0) = parentВнутреннееПеремещениеТМЦRowByВнутреннееПеремещениеТМЦ_ЧтоПеремещается(0)
             End If
             If (Not (parentТМЦRowByТМЦЧтоПеремещается) Is Nothing) Then
                 columnValuesArray(1) = parentТМЦRowByТМЦЧтоПеремещается(0)
@@ -3556,9 +3556,12 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddЧтоПереоцениваетсяRow(ByVal __Документа As Integer, ByVal parentТМЦRowByТМЦЧтоПереоценивается As ТМЦRow, ByVal СтараяЦена As Integer, ByVal НоваяЦена As Integer) As ЧтоПереоцениваетсяRow
+        Public Overloads Function AddЧтоПереоцениваетсяRow(ByVal parentПереоценкаТМЦRowByЧтоПереоценивается_ПереоценкаТМЦ As ПереоценкаТМЦRow, ByVal parentТМЦRowByТМЦЧтоПереоценивается As ТМЦRow, ByVal СтараяЦена As Integer, ByVal НоваяЦена As Integer) As ЧтоПереоцениваетсяRow
             Dim rowЧтоПереоцениваетсяRow As ЧтоПереоцениваетсяRow = CType(Me.NewRow,ЧтоПереоцениваетсяRow)
-            Dim columnValuesArray() As Object = New Object() {__Документа, Nothing, СтараяЦена, НоваяЦена}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, СтараяЦена, НоваяЦена}
+            If (Not (parentПереоценкаТМЦRowByЧтоПереоценивается_ПереоценкаТМЦ) Is Nothing) Then
+                columnValuesArray(0) = parentПереоценкаТМЦRowByЧтоПереоценивается_ПереоценкаТМЦ(0)
+            End If
             If (Not (parentТМЦRowByТМЦЧтоПереоценивается) Is Nothing) Then
                 columnValuesArray(1) = parentТМЦRowByТМЦЧтоПереоценивается(0)
             End If
@@ -4658,11 +4661,11 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetЧтоПеремещаетсяRows() As ЧтоПеремещаетсяRow()
-            If (Me.Table.ChildRelations("ПереоценкаТМЦЧтоПеремещается") Is Nothing) Then
-                Return New ЧтоПеремещаетсяRow(-1) {}
+        Public Function GetЧтоПереоцениваетсяRows() As ЧтоПереоцениваетсяRow()
+            If (Me.Table.ChildRelations("ЧтоПереоценивается_ПереоценкаТМЦ") Is Nothing) Then
+                Return New ЧтоПереоцениваетсяRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ПереоценкаТМЦЧтоПеремещается")),ЧтоПеремещаетсяRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("ЧтоПереоценивается_ПереоценкаТМЦ")),ЧтоПереоцениваетсяRow())
             End If
         End Function
     End Class
@@ -5362,17 +5365,6 @@ Partial Public Class dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ПереоценкаТМЦRow() As ПереоценкаТМЦRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ПереоценкаТМЦЧтоПеремещается")),ПереоценкаТМЦRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("ПереоценкаТМЦЧтоПеремещается"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ТМЦRow() As ТМЦRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("ТМЦЧтоПеремещается")),ТМЦRow)
@@ -5498,6 +5490,17 @@ Partial Public Class dbDataSet
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("ТМЦЧтоПереоценивается"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ПереоценкаТМЦRow() As ПереоценкаТМЦRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("ЧтоПереоценивается_ПереоценкаТМЦ")),ПереоценкаТМЦRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("ЧтоПереоценивается_ПереоценкаТМЦ"))
             End Set
         End Property
         

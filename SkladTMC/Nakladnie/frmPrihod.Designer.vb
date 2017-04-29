@@ -66,6 +66,7 @@ Partial Class frmPrihod
         Me.ДокументаDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ИнвентарныйНомерDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ЦенаDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         _ДокументаLabel = New System.Windows.Forms.Label()
         ДатаLabel = New System.Windows.Forms.Label()
         ПоставщикLabel = New System.Windows.Forms.Label()
@@ -413,11 +414,21 @@ Partial Class frmPrihod
         Me.ЦенаDataGridViewTextBoxColumn.HeaderText = "Цена"
         Me.ЦенаDataGridViewTextBoxColumn.Name = "ЦенаDataGridViewTextBoxColumn"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 395)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Накладна"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmPrihod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(368, 397)
+        Me.ClientSize = New System.Drawing.Size(368, 429)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ЧтоПиришлоDataGridView)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.ComboBox2)
@@ -437,7 +448,7 @@ Partial Class frmPrihod
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmPrihod"
-        Me.Text = "frmPrihod"
+        Me.Text = " "
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПриходТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПриходТМЦBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -490,4 +501,5 @@ Partial Class frmPrihod
     Friend WithEvents ДокументаDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ИнвентарныйНомерDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ЦенаDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
