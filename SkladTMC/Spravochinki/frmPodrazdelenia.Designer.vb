@@ -81,13 +81,13 @@ Partial Class frmPodrazdelenia
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "КодПодразделения"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "КодПодразделения"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Код"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Нимаенование"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Нимаенование"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Найменування"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'frmPodrazdelenia
@@ -102,6 +102,7 @@ Partial Class frmPodrazdelenia
         Me.Name = "frmPodrazdelenia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Підрозділи"
+        Me.TopMost = True
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПодразделенияBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПодразделенияDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

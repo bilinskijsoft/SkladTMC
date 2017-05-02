@@ -81,13 +81,13 @@ Partial Class frmMOL
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "КодМОЛ"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "КодМОЛ"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Код"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "ФИОМОЛ"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ФИОМОЛ"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ПІБ"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'frmMOL
@@ -97,7 +97,8 @@ Partial Class frmMOL
         Me.ClientSize = New System.Drawing.Size(397, 349)
         Me.Controls.Add(Me.МОЛDataGridView)
         Me.Name = "frmMOL"
-        Me.Text = "frmMOL"
+        Me.Text = "МОЛ"
+        Me.TopMost = True
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.МОЛBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.МОЛDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

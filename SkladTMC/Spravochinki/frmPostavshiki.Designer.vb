@@ -81,13 +81,13 @@ Partial Class frmPostavshiki
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "КодПоставщика"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "КодПоставщика"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Код"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Наименование"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Наименование"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Найменування"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'frmPostavshiki

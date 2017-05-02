@@ -23,33 +23,34 @@ Partial Class frmSpisanya
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSpisanya))
         Dim _ДокументаLabel As System.Windows.Forms.Label
         Dim ДатаLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSpisanya))
         Me.DbDataSet = New Sklad_TMC.dbDataSet()
         Me.СписаниеТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.СписаниеТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.СписаниеТМЦTableAdapter()
         Me.TableAdapterManager = New Sklad_TMC.dbDataSetTableAdapters.TableAdapterManager()
+        Me.ТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ТМЦTableAdapter()
+        Me.ЧтоСписываетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоСписываетсяTableAdapter()
         Me.СписаниеТМЦBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.СписаниеТМЦBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me._ДокументаTextBox = New System.Windows.Forms.TextBox()
         Me.ДатаDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.ЧтоСписываетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ЧтоСписываетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоСписываетсяTableAdapter()
         Me.ЧтоСписываетсяDataGridView = New System.Windows.Forms.DataGridView()
         Me.ТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ТМЦTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -63,6 +64,24 @@ Partial Class frmSpisanya
         CType(Me.ЧтоСписываетсяDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        '_ДокументаLabel
+        '
+        _ДокументаLabel.AutoSize = True
+        _ДокументаLabel.Location = New System.Drawing.Point(12, 35)
+        _ДокументаLabel.Name = "_ДокументаLabel"
+        _ДокументаLabel.Size = New System.Drawing.Size(78, 13)
+        _ДокументаLabel.TabIndex = 1
+        _ДокументаLabel.Text = "№Документа:"
+        '
+        'ДатаLabel
+        '
+        ДатаLabel.AutoSize = True
+        ДатаLabel.Location = New System.Drawing.Point(12, 62)
+        ДатаLabel.Name = "ДатаLabel"
+        ДатаLabel.Size = New System.Drawing.Size(36, 13)
+        ДатаLabel.TabIndex = 3
+        ДатаLabel.Text = "Дата:"
         '
         'DbDataSet
         '
@@ -95,6 +114,14 @@ Partial Class frmSpisanya
         Me.TableAdapterManager.ЧтоПиришлоTableAdapter = Nothing
         Me.TableAdapterManager.ЧтоСписываетсяTableAdapter = Me.ЧтоСписываетсяTableAdapter
         '
+        'ТМЦTableAdapter
+        '
+        Me.ТМЦTableAdapter.ClearBeforeFill = True
+        '
+        'ЧтоСписываетсяTableAdapter
+        '
+        Me.ЧтоСписываетсяTableAdapter.ClearBeforeFill = True
+        '
         'СписаниеТМЦBindingNavigator
         '
         Me.СписаниеТМЦBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
@@ -112,6 +139,31 @@ Partial Class frmSpisanya
         Me.СписаниеТМЦBindingNavigator.Size = New System.Drawing.Size(379, 25)
         Me.СписаниеТМЦBindingNavigator.TabIndex = 0
         Me.СписаниеТМЦBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Добавить"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(43, 22)
+        Me.BindingNavigatorCountItem.Text = "для {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -145,17 +197,10 @@ Partial Class frmSpisanya
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Текущее положение"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(43, 15)
-        Me.BindingNavigatorCountItem.Text = "для {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -163,7 +208,7 @@ Partial Class frmSpisanya
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -172,48 +217,21 @@ Partial Class frmSpisanya
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Добавить"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Удалить"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'СписаниеТМЦBindingNavigatorSaveItem
         '
         Me.СписаниеТМЦBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.СписаниеТМЦBindingNavigatorSaveItem.Image = CType(resources.GetObject("СписаниеТМЦBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.СписаниеТМЦBindingNavigatorSaveItem.Name = "СписаниеТМЦBindingNavigatorSaveItem"
-        Me.СписаниеТМЦBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.СписаниеТМЦBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.СписаниеТМЦBindingNavigatorSaveItem.Text = "Сохранить данные"
-        '
-        '_ДокументаLabel
-        '
-        _ДокументаLabel.AutoSize = True
-        _ДокументаLabel.Location = New System.Drawing.Point(12, 35)
-        _ДокументаLabel.Name = "_ДокументаLabel"
-        _ДокументаLabel.Size = New System.Drawing.Size(78, 13)
-        _ДокументаLabel.TabIndex = 1
-        _ДокументаLabel.Text = "№Документа:"
         '
         '_ДокументаTextBox
         '
@@ -222,15 +240,6 @@ Partial Class frmSpisanya
         Me._ДокументаTextBox.Name = "_ДокументаTextBox"
         Me._ДокументаTextBox.Size = New System.Drawing.Size(271, 20)
         Me._ДокументаTextBox.TabIndex = 2
-        '
-        'ДатаLabel
-        '
-        ДатаLabel.AutoSize = True
-        ДатаLabel.Location = New System.Drawing.Point(12, 62)
-        ДатаLabel.Name = "ДатаLabel"
-        ДатаLabel.Size = New System.Drawing.Size(36, 13)
-        ДатаLabel.TabIndex = 3
-        ДатаLabel.Text = "Дата:"
         '
         'ДатаDateTimePicker
         '
@@ -244,10 +253,6 @@ Partial Class frmSpisanya
         '
         Me.ЧтоСписываетсяBindingSource.DataMember = "СписаниеТМЦЧтоСписывается"
         Me.ЧтоСписываетсяBindingSource.DataSource = Me.СписаниеТМЦBindingSource
-        '
-        'ЧтоСписываетсяTableAdapter
-        '
-        Me.ЧтоСписываетсяTableAdapter.ClearBeforeFill = True
         '
         'ЧтоСписываетсяDataGridView
         '
@@ -265,13 +270,18 @@ Partial Class frmSpisanya
         Me.ТМЦBindingSource.DataMember = "ТМЦ"
         Me.ТМЦBindingSource.DataSource = Me.DbDataSet
         '
-        'ТМЦTableAdapter
+        'Button1
         '
-        Me.ТМЦTableAdapter.ClearBeforeFill = True
+        Me.Button1.Location = New System.Drawing.Point(15, 311)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Накладна"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "№Документа"
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "№ Документа"
         Me.DataGridViewTextBoxColumn1.HeaderText = "№Документа"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
@@ -280,7 +290,7 @@ Partial Class frmSpisanya
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "ИнвентарныйНомер"
         Me.DataGridViewTextBoxColumn2.DataSource = Me.ТМЦBindingSource
         Me.DataGridViewTextBoxColumn2.DisplayMember = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Інвентарний номер"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
@@ -289,14 +299,16 @@ Partial Class frmSpisanya
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "ЦенаДоСписания"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ЦенаДоСписания"
+        Me.DataGridViewTextBoxColumn3.HeaderText = ""
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'frmSpisanya
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 319)
+        Me.ClientSize = New System.Drawing.Size(379, 343)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ЧтоСписываетсяDataGridView)
         Me.Controls.Add(_ДокументаLabel)
         Me.Controls.Add(Me._ДокументаTextBox)
@@ -307,7 +319,8 @@ Partial Class frmSpisanya
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmSpisanya"
-        Me.Text = "frmSpisanya"
+        Me.Text = "Списання"
+        Me.TopMost = True
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.СписаниеТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.СписаниеТМЦBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -345,6 +358,7 @@ Partial Class frmSpisanya
     Friend WithEvents ТМЦTableAdapter As dbDataSetTableAdapters.ТМЦTableAdapter
     Friend WithEvents ЧтоСписываетсяDataGridView As DataGridView
     Friend WithEvents ТМЦBindingSource As BindingSource
+    Friend WithEvents Button1 As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn

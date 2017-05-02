@@ -29,6 +29,7 @@ Partial Class frmPrihod
         Dim ПодразделениеLabel As System.Windows.Forms.Label
         Dim МОЛLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrihod))
+        Dim НаименованиеLabel As System.Windows.Forms.Label
         Me.DbDataSet = New Sklad_TMC.dbDataSet()
         Me.ПриходТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ПриходТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ПриходТМЦTableAdapter()
@@ -63,15 +64,19 @@ Partial Class frmPrihod
         Me.ЧтоПиришлоBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ЧтоПиришлоTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПиришлоTableAdapter()
         Me.ЧтоПиришлоDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ТМЦTableAdapter()
+        Me.НаименованиеTextBox = New System.Windows.Forms.TextBox()
         Me.ДокументаDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ИнвентарныйНомерDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ЦенаDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
         _ДокументаLabel = New System.Windows.Forms.Label()
         ДатаLabel = New System.Windows.Forms.Label()
         ПоставщикLabel = New System.Windows.Forms.Label()
         ПодразделениеLabel = New System.Windows.Forms.Label()
         МОЛLabel = New System.Windows.Forms.Label()
+        НаименованиеLabel = New System.Windows.Forms.Label()
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ПриходТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ПриходТМЦBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +86,7 @@ Partial Class frmPrihod
         CType(Me.ПоставщикиBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ЧтоПиришлоDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         '_ДокументаLabel
@@ -88,9 +94,9 @@ Partial Class frmPrihod
         _ДокументаLabel.AutoSize = True
         _ДокументаLabel.Location = New System.Drawing.Point(12, 40)
         _ДокументаLabel.Name = "_ДокументаLabel"
-        _ДокументаLabel.Size = New System.Drawing.Size(78, 13)
+        _ДокументаLabel.Size = New System.Drawing.Size(81, 13)
         _ДокументаLabel.TabIndex = 1
-        _ДокументаLabel.Text = "№Документа:"
+        _ДокументаLabel.Text = "№ Документа:"
         '
         'ДатаLabel
         '
@@ -115,9 +121,9 @@ Partial Class frmPrihod
         ПодразделениеLabel.AutoSize = True
         ПодразделениеLabel.Location = New System.Drawing.Point(12, 119)
         ПодразделениеLabel.Name = "ПодразделениеLabel"
-        ПодразделениеLabel.Size = New System.Drawing.Size(90, 13)
+        ПодразделениеLabel.Size = New System.Drawing.Size(58, 13)
         ПодразделениеLabel.TabIndex = 7
-        ПодразделениеLabel.Text = "Подразделение:"
+        ПодразделениеLabel.Text = "Підрозділ:"
         '
         'МОЛLabel
         '
@@ -266,7 +272,7 @@ Partial Class frmPrihod
         Me.ПриходТМЦBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ПриходТМЦBindingNavigator.Name = "ПриходТМЦBindingNavigator"
         Me.ПриходТМЦBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ПриходТМЦBindingNavigator.Size = New System.Drawing.Size(368, 25)
+        Me.ПриходТМЦBindingNavigator.Size = New System.Drawing.Size(364, 25)
         Me.ПриходТМЦBindingNavigator.TabIndex = 0
         Me.ПриходТМЦBindingNavigator.Text = "BindingNavigator1"
         '
@@ -395,25 +401,6 @@ Partial Class frmPrihod
         Me.ЧтоПиришлоDataGridView.Size = New System.Drawing.Size(342, 220)
         Me.ЧтоПиришлоDataGridView.TabIndex = 14
         '
-        'ДокументаDataGridViewTextBoxColumn
-        '
-        Me.ДокументаDataGridViewTextBoxColumn.DataPropertyName = "№Документа"
-        Me.ДокументаDataGridViewTextBoxColumn.HeaderText = "№Документа"
-        Me.ДокументаDataGridViewTextBoxColumn.Name = "ДокументаDataGridViewTextBoxColumn"
-        Me.ДокументаDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ИнвентарныйНомерDataGridViewTextBoxColumn
-        '
-        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.DataPropertyName = "ИнвентарныйНомер"
-        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.HeaderText = "ИнвентарныйНомер"
-        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.Name = "ИнвентарныйНомерDataGridViewTextBoxColumn"
-        '
-        'ЦенаDataGridViewTextBoxColumn
-        '
-        Me.ЦенаDataGridViewTextBoxColumn.DataPropertyName = "Цена"
-        Me.ЦенаDataGridViewTextBoxColumn.HeaderText = "Цена"
-        Me.ЦенаDataGridViewTextBoxColumn.Name = "ЦенаDataGridViewTextBoxColumn"
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(12, 395)
@@ -423,11 +410,60 @@ Partial Class frmPrihod
         Me.Button1.Text = "Накладна"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ТМЦBindingSource
+        '
+        Me.ТМЦBindingSource.DataMember = "ТМЦ"
+        Me.ТМЦBindingSource.DataSource = Me.DbDataSet
+        '
+        'ТМЦTableAdapter
+        '
+        Me.ТМЦTableAdapter.ClearBeforeFill = True
+        '
+        'НаименованиеLabel
+        '
+        НаименованиеLabel.AutoSize = True
+        НаименованиеLabel.Location = New System.Drawing.Point(116, 401)
+        НаименованиеLabel.Name = "НаименованиеLabel"
+        НаименованиеLabel.Size = New System.Drawing.Size(86, 13)
+        НаименованиеLabel.TabIndex = 16
+        НаименованиеLabel.Text = "Наименование:"
+        НаименованиеLabel.Visible = False
+        '
+        'НаименованиеTextBox
+        '
+        Me.НаименованиеTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ТМЦBindingSource, "Наименование", True))
+        Me.НаименованиеTextBox.Location = New System.Drawing.Point(208, 398)
+        Me.НаименованиеTextBox.Name = "НаименованиеTextBox"
+        Me.НаименованиеTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.НаименованиеTextBox.TabIndex = 17
+        Me.НаименованиеTextBox.Visible = False
+        '
+        'ДокументаDataGridViewTextBoxColumn
+        '
+        Me.ДокументаDataGridViewTextBoxColumn.DataPropertyName = "№Документа"
+        Me.ДокументаDataGridViewTextBoxColumn.HeaderText = "№ Документа"
+        Me.ДокументаDataGridViewTextBoxColumn.Name = "ДокументаDataGridViewTextBoxColumn"
+        Me.ДокументаDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ИнвентарныйНомерDataGridViewTextBoxColumn
+        '
+        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.DataPropertyName = "ИнвентарныйНомер"
+        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.HeaderText = "Інвентарний номер"
+        Me.ИнвентарныйНомерDataGridViewTextBoxColumn.Name = "ИнвентарныйНомерDataGridViewTextBoxColumn"
+        '
+        'ЦенаDataGridViewTextBoxColumn
+        '
+        Me.ЦенаDataGridViewTextBoxColumn.DataPropertyName = "Цена"
+        Me.ЦенаDataGridViewTextBoxColumn.HeaderText = "Ціна"
+        Me.ЦенаDataGridViewTextBoxColumn.Name = "ЦенаDataGridViewTextBoxColumn"
+        '
         'frmPrihod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(368, 429)
+        Me.ClientSize = New System.Drawing.Size(364, 430)
+        Me.Controls.Add(НаименованиеLabel)
+        Me.Controls.Add(Me.НаименованиеTextBox)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ЧтоПиришлоDataGridView)
         Me.Controls.Add(Me.ComboBox3)
@@ -448,7 +484,9 @@ Partial Class frmPrihod
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmPrihod"
-        Me.Text = " "
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Приход"
+        Me.TopMost = True
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПриходТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПриходТМЦBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -459,6 +497,7 @@ Partial Class frmPrihod
         CType(Me.ПоставщикиBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ЧтоПиришлоDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -498,8 +537,11 @@ Partial Class frmPrihod
     Friend WithEvents ЧтоПиришлоBindingSource As BindingSource
     Friend WithEvents ЧтоПиришлоTableAdapter As dbDataSetTableAdapters.ЧтоПиришлоTableAdapter
     Friend WithEvents ЧтоПиришлоDataGridView As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ТМЦBindingSource As BindingSource
+    Friend WithEvents ТМЦTableAdapter As dbDataSetTableAdapters.ТМЦTableAdapter
+    Friend WithEvents НаименованиеTextBox As TextBox
     Friend WithEvents ДокументаDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ИнвентарныйНомерDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ЦенаDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
 End Class

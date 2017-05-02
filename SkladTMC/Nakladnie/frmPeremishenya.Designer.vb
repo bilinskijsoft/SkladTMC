@@ -64,11 +64,11 @@ Partial Class frmPeremishenya
         Me.КудаМОЛTextBox = New System.Windows.Forms.TextBox()
         Me.ЧтоПеремещаетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ЧтоПеремещаетсяDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ПодразделенияTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ПодразделенияTableAdapter()
         Me.МОЛTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.МОЛTableAdapter()
         Me.ПереоценкаТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ПереоценкаТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ПереоценкаТМЦTableAdapter()
-        Me.ТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ТМЦTableAdapter()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -89,8 +89,8 @@ Partial Class frmPeremishenya
         Me.ВнутреннееПеремещениеТМЦBindingNavigator.SuspendLayout()
         CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ЧтоПеремещаетсяDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ПереоценкаТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ПереоценкаТМЦBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         '_ДокументаLabel
@@ -98,9 +98,9 @@ Partial Class frmPeremishenya
         _ДокументаLabel.AutoSize = True
         _ДокументаLabel.Location = New System.Drawing.Point(12, 35)
         _ДокументаLabel.Name = "_ДокументаLabel"
-        _ДокументаLabel.Size = New System.Drawing.Size(78, 13)
+        _ДокументаLabel.Size = New System.Drawing.Size(81, 13)
         _ДокументаLabel.TabIndex = 17
-        _ДокументаLabel.Text = "№Документа:"
+        _ДокументаLabel.Text = "№ Документа:"
         '
         'ДатаLabel
         '
@@ -116,27 +116,27 @@ Partial Class frmPeremishenya
         ОткудаПодразделениеLabel.AutoSize = True
         ОткудаПодразделениеLabel.Location = New System.Drawing.Point(12, 87)
         ОткудаПодразделениеLabel.Name = "ОткудаПодразделениеLabel"
-        ОткудаПодразделениеLabel.Size = New System.Drawing.Size(129, 13)
+        ОткудаПодразделениеLabel.Size = New System.Drawing.Size(89, 13)
         ОткудаПодразделениеLabel.TabIndex = 21
-        ОткудаПодразделениеLabel.Text = "Откуда Подразделение:"
+        ОткудаПодразделениеLabel.Text = "Звідки підрозділ"
         '
         'ОткудаМОЛLabel
         '
         ОткудаМОЛLabel.AutoSize = True
         ОткудаМОЛLabel.Location = New System.Drawing.Point(12, 113)
         ОткудаМОЛLabel.Name = "ОткудаМОЛLabel"
-        ОткудаМОЛLabel.Size = New System.Drawing.Size(74, 13)
+        ОткудаМОЛLabel.Size = New System.Drawing.Size(71, 13)
         ОткудаМОЛLabel.TabIndex = 23
-        ОткудаМОЛLabel.Text = "Откуда МОЛ:"
+        ОткудаМОЛLabel.Text = "Звідки МОЛ:"
         '
         'КудаПодразделениеLabel
         '
         КудаПодразделениеLabel.AutoSize = True
         КудаПодразделениеLabel.Location = New System.Drawing.Point(12, 139)
         КудаПодразделениеLabel.Name = "КудаПодразделениеLabel"
-        КудаПодразделениеLabel.Size = New System.Drawing.Size(117, 13)
+        КудаПодразделениеLabel.Size = New System.Drawing.Size(80, 13)
         КудаПодразделениеLabel.TabIndex = 25
-        КудаПодразделениеLabel.Text = "Куда Подразделение:"
+        КудаПодразделениеLabel.Text = "Куди підрозділ"
         '
         'КудаМОЛLabel
         '
@@ -145,7 +145,7 @@ Partial Class frmPeremishenya
         КудаМОЛLabel.Name = "КудаМОЛLabel"
         КудаМОЛLabel.Size = New System.Drawing.Size(62, 13)
         КудаМОЛLabel.TabIndex = 27
-        КудаМОЛLabel.Text = "Куда МОЛ:"
+        КудаМОЛLabel.Text = "Куди МОЛ:"
         '
         'ComboBox1
         '
@@ -426,6 +426,11 @@ Partial Class frmPeremishenya
         Me.ЧтоПеремещаетсяDataGridView.Size = New System.Drawing.Size(342, 220)
         Me.ЧтоПеремещаетсяDataGridView.TabIndex = 28
         '
+        'ТМЦBindingSource
+        '
+        Me.ТМЦBindingSource.DataMember = "ТМЦ"
+        Me.ТМЦBindingSource.DataSource = Me.DbDataSet
+        '
         'ПодразделенияTableAdapter
         '
         Me.ПодразделенияTableAdapter.ClearBeforeFill = True
@@ -443,11 +448,6 @@ Partial Class frmPeremishenya
         '
         Me.ПереоценкаТМЦTableAdapter.ClearBeforeFill = True
         '
-        'ТМЦBindingSource
-        '
-        Me.ТМЦBindingSource.DataMember = "ТМЦ"
-        Me.ТМЦBindingSource.DataSource = Me.DbDataSet
-        '
         'ТМЦTableAdapter
         '
         Me.ТМЦTableAdapter.ClearBeforeFill = True
@@ -455,7 +455,7 @@ Partial Class frmPeremishenya
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "№Документа"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "№Документа"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "№ Документа"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
         'DataGridViewTextBoxColumn2
@@ -463,7 +463,7 @@ Partial Class frmPeremishenya
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "ИнвентарныйНомер"
         Me.DataGridViewTextBoxColumn2.DataSource = Me.ТМЦBindingSource
         Me.DataGridViewTextBoxColumn2.DisplayMember = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Інвентарний номер"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
@@ -472,7 +472,7 @@ Partial Class frmPeremishenya
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "ЦенаПеремещения"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ЦенаПеремещения"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Ціна переміщення"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'frmPeremishenya
@@ -503,7 +503,8 @@ Partial Class frmPeremishenya
         Me.MinimizeBox = False
         Me.Name = "frmPeremishenya"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPeremishenya"
+        Me.Text = "Переміщення"
+        Me.TopMost = True
         CType(Me.ВнутреннееПеремещениеТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ПодразделенияBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -515,8 +516,8 @@ Partial Class frmPeremishenya
         Me.ВнутреннееПеремещениеТМЦBindingNavigator.PerformLayout()
         CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ЧтоПеремещаетсяDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ПереоценкаТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ПереоценкаТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

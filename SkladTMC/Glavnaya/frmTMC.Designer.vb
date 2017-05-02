@@ -23,7 +23,6 @@ Partial Class frmTMC
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTMC))
         Dim ИнвентарныйНомерLabel As System.Windows.Forms.Label
         Dim НаименованиеLabel As System.Windows.Forms.Label
         Dim КатегорияLabel As System.Windows.Forms.Label
@@ -32,22 +31,27 @@ Partial Class frmTMC
         Dim Кол_воLabel As System.Windows.Forms.Label
         Dim ТекущаяЦенаLabel As System.Windows.Forms.Label
         Dim ЕденицаУчетаLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTMC))
         Me.DbDataSet = New Sklad_TMC.dbDataSet()
         Me.ТМЦBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ТМЦTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ТМЦTableAdapter()
         Me.TableAdapterManager = New Sklad_TMC.dbDataSetTableAdapters.TableAdapterManager()
+        Me.ЧтоПеремещаетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПеремещаетсяTableAdapter()
+        Me.ЧтоПереоцениваетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПереоцениваетсяTableAdapter()
+        Me.ЧтоПиришлоTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПиришлоTableAdapter()
+        Me.ЧтоСписываетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоСписываетсяTableAdapter()
         Me.ТМЦBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ТМЦBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ИнвентарныйНомерTextBox = New System.Windows.Forms.TextBox()
         Me.НаименованиеTextBox = New System.Windows.Forms.TextBox()
@@ -59,31 +63,27 @@ Partial Class frmTMC
         Me.ЕденицаУчетаTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.ЧтоПиришлоBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ЧтоПиришлоTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПиришлоTableAdapter()
         Me.ЧтоПиришлоDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ЧтоПиришлоBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ЧтоПеремещаетсяDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ЧтоПеремещаетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ЧтоПереоцениваетсяDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ЧтоПереоцениваетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.ЧтоСписываетсяDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ЧтоСписываетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ЧтоПеремещаетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ЧтоПеремещаетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПеремещаетсяTableAdapter()
-        Me.ЧтоПеремещаетсяDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ЧтоПереоцениваетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ЧтоПереоцениваетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоПереоцениваетсяTableAdapter()
-        Me.ЧтоПереоцениваетсяDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ЧтоСписываетсяBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ЧтоСписываетсяTableAdapter = New Sklad_TMC.dbDataSetTableAdapters.ЧтоСписываетсяTableAdapter()
-        Me.ЧтоСписываетсяDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -101,18 +101,90 @@ Partial Class frmTMC
         Me.ТМЦBindingNavigator.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
-        CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ЧтоПиришлоDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         CType(Me.ЧтоПеремещаетсяDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ЧтоПереоцениваетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         CType(Me.ЧтоПереоцениваетсяDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ЧтоСписываетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ЧтоПереоцениваетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
         CType(Me.ЧтоСписываетсяDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ЧтоСписываетсяBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ИнвентарныйНомерLabel
+        '
+        ИнвентарныйНомерLabel.AutoSize = True
+        ИнвентарныйНомерLabel.Location = New System.Drawing.Point(12, 37)
+        ИнвентарныйНомерLabel.Name = "ИнвентарныйНомерLabel"
+        ИнвентарныйНомерLabel.Size = New System.Drawing.Size(107, 13)
+        ИнвентарныйНомерLabel.TabIndex = 1
+        ИнвентарныйНомерLabel.Text = "Інвентарний номер:"
+        '
+        'НаименованиеLabel
+        '
+        НаименованиеLabel.AutoSize = True
+        НаименованиеLabel.Location = New System.Drawing.Point(12, 63)
+        НаименованиеLabel.Name = "НаименованиеLabel"
+        НаименованиеLabel.Size = New System.Drawing.Size(85, 13)
+        НаименованиеLabel.TabIndex = 3
+        НаименованиеLabel.Text = "Найменування:"
+        '
+        'КатегорияLabel
+        '
+        КатегорияLabel.AutoSize = True
+        КатегорияLabel.Location = New System.Drawing.Point(12, 89)
+        КатегорияLabel.Name = "КатегорияLabel"
+        КатегорияLabel.Size = New System.Drawing.Size(59, 13)
+        КатегорияLabel.TabIndex = 5
+        КатегорияLabel.Text = "Категорія:"
+        '
+        'ЗаводскойНомерLabel
+        '
+        ЗаводскойНомерLabel.AutoSize = True
+        ЗаводскойНомерLabel.Location = New System.Drawing.Point(12, 115)
+        ЗаводскойНомерLabel.Name = "ЗаводскойНомерLabel"
+        ЗаводскойНомерLabel.Size = New System.Drawing.Size(106, 13)
+        ЗаводскойНомерLabel.TabIndex = 7
+        ЗаводскойНомерLabel.Text = "Заводський номер:"
+        '
+        'НомерПаспортаLabel
+        '
+        НомерПаспортаLabel.AutoSize = True
+        НомерПаспортаLabel.Location = New System.Drawing.Point(12, 141)
+        НомерПаспортаLabel.Name = "НомерПаспортаLabel"
+        НомерПаспортаLabel.Size = New System.Drawing.Size(94, 13)
+        НомерПаспортаLabel.TabIndex = 9
+        НомерПаспортаLabel.Text = "Номер паспорта:"
+        '
+        'Кол_воLabel
+        '
+        Кол_воLabel.AutoSize = True
+        Кол_воLabel.Location = New System.Drawing.Point(12, 167)
+        Кол_воLabel.Name = "Кол_воLabel"
+        Кол_воLabel.Size = New System.Drawing.Size(56, 13)
+        Кол_воLabel.TabIndex = 11
+        Кол_воLabel.Text = "Кількість:"
+        '
+        'ТекущаяЦенаLabel
+        '
+        ТекущаяЦенаLabel.AutoSize = True
+        ТекущаяЦенаLabel.Location = New System.Drawing.Point(12, 193)
+        ТекущаяЦенаLabel.Name = "ТекущаяЦенаLabel"
+        ТекущаяЦенаLabel.Size = New System.Drawing.Size(32, 13)
+        ТекущаяЦенаLabel.TabIndex = 13
+        ТекущаяЦенаLabel.Text = "Ціна:"
+        '
+        'ЕденицаУчетаLabel
+        '
+        ЕденицаУчетаLabel.AutoSize = True
+        ЕденицаУчетаLabel.Location = New System.Drawing.Point(12, 219)
+        ЕденицаУчетаLabel.Name = "ЕденицаУчетаLabel"
+        ЕденицаУчетаLabel.Size = New System.Drawing.Size(90, 13)
+        ЕденицаУчетаLabel.TabIndex = 15
+        ЕденицаУчетаLabel.Text = "Одиниця виміру:"
         '
         'DbDataSet
         '
@@ -145,6 +217,22 @@ Partial Class frmTMC
         Me.TableAdapterManager.ЧтоПиришлоTableAdapter = Me.ЧтоПиришлоTableAdapter
         Me.TableAdapterManager.ЧтоСписываетсяTableAdapter = Me.ЧтоСписываетсяTableAdapter
         '
+        'ЧтоПеремещаетсяTableAdapter
+        '
+        Me.ЧтоПеремещаетсяTableAdapter.ClearBeforeFill = True
+        '
+        'ЧтоПереоцениваетсяTableAdapter
+        '
+        Me.ЧтоПереоцениваетсяTableAdapter.ClearBeforeFill = True
+        '
+        'ЧтоПиришлоTableAdapter
+        '
+        Me.ЧтоПиришлоTableAdapter.ClearBeforeFill = True
+        '
+        'ЧтоСписываетсяTableAdapter
+        '
+        Me.ЧтоСписываетсяTableAdapter.ClearBeforeFill = True
+        '
         'ТМЦBindingNavigator
         '
         Me.ТМЦBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
@@ -162,6 +250,31 @@ Partial Class frmTMC
         Me.ТМЦBindingNavigator.Size = New System.Drawing.Size(634, 25)
         Me.ТМЦBindingNavigator.TabIndex = 0
         Me.ТМЦBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Добавить"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(43, 22)
+        Me.BindingNavigatorCountItem.Text = "для {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Удалить"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -195,17 +308,10 @@ Partial Class frmTMC
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Текущее положение"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(43, 15)
-        Me.BindingNavigatorCountItem.Text = "для {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Общее число элементов"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -213,7 +319,7 @@ Partial Class frmTMC
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Переместить вперед"
         '
         'BindingNavigatorMoveLastItem
@@ -222,48 +328,21 @@ Partial Class frmTMC
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Переместить в конец"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Добавить"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Удалить"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'ТМЦBindingNavigatorSaveItem
         '
         Me.ТМЦBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.ТМЦBindingNavigatorSaveItem.Image = CType(resources.GetObject("ТМЦBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.ТМЦBindingNavigatorSaveItem.Name = "ТМЦBindingNavigatorSaveItem"
-        Me.ТМЦBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.ТМЦBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ТМЦBindingNavigatorSaveItem.Text = "Сохранить данные"
-        '
-        'ИнвентарныйНомерLabel
-        '
-        ИнвентарныйНомерLabel.AutoSize = True
-        ИнвентарныйНомерLabel.Location = New System.Drawing.Point(12, 37)
-        ИнвентарныйНомерLabel.Name = "ИнвентарныйНомерLabel"
-        ИнвентарныйНомерLabel.Size = New System.Drawing.Size(116, 13)
-        ИнвентарныйНомерLabel.TabIndex = 1
-        ИнвентарныйНомерLabel.Text = "Инвентарный Номер:"
         '
         'ИнвентарныйНомерTextBox
         '
@@ -273,15 +352,6 @@ Partial Class frmTMC
         Me.ИнвентарныйНомерTextBox.Size = New System.Drawing.Size(480, 20)
         Me.ИнвентарныйНомерTextBox.TabIndex = 2
         '
-        'НаименованиеLabel
-        '
-        НаименованиеLabel.AutoSize = True
-        НаименованиеLabel.Location = New System.Drawing.Point(12, 63)
-        НаименованиеLabel.Name = "НаименованиеLabel"
-        НаименованиеLabel.Size = New System.Drawing.Size(86, 13)
-        НаименованиеLabel.TabIndex = 3
-        НаименованиеLabel.Text = "Наименование:"
-        '
         'НаименованиеTextBox
         '
         Me.НаименованиеTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ТМЦBindingSource, "Наименование", True))
@@ -289,15 +359,6 @@ Partial Class frmTMC
         Me.НаименованиеTextBox.Name = "НаименованиеTextBox"
         Me.НаименованиеTextBox.Size = New System.Drawing.Size(480, 20)
         Me.НаименованиеTextBox.TabIndex = 4
-        '
-        'КатегорияLabel
-        '
-        КатегорияLabel.AutoSize = True
-        КатегорияLabel.Location = New System.Drawing.Point(12, 89)
-        КатегорияLabel.Name = "КатегорияLabel"
-        КатегорияLabel.Size = New System.Drawing.Size(63, 13)
-        КатегорияLabel.TabIndex = 5
-        КатегорияLabel.Text = "Категория:"
         '
         'КатегорияTextBox
         '
@@ -307,15 +368,6 @@ Partial Class frmTMC
         Me.КатегорияTextBox.Size = New System.Drawing.Size(480, 20)
         Me.КатегорияTextBox.TabIndex = 6
         '
-        'ЗаводскойНомерLabel
-        '
-        ЗаводскойНомерLabel.AutoSize = True
-        ЗаводскойНомерLabel.Location = New System.Drawing.Point(12, 115)
-        ЗаводскойНомерLabel.Name = "ЗаводскойНомерLabel"
-        ЗаводскойНомерLabel.Size = New System.Drawing.Size(102, 13)
-        ЗаводскойНомерLabel.TabIndex = 7
-        ЗаводскойНомерLabel.Text = "Заводской Номер:"
-        '
         'ЗаводскойНомерTextBox
         '
         Me.ЗаводскойНомерTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ТМЦBindingSource, "ЗаводскойНомер", True))
@@ -323,15 +375,6 @@ Partial Class frmTMC
         Me.ЗаводскойНомерTextBox.Name = "ЗаводскойНомерTextBox"
         Me.ЗаводскойНомерTextBox.Size = New System.Drawing.Size(480, 20)
         Me.ЗаводскойНомерTextBox.TabIndex = 8
-        '
-        'НомерПаспортаLabel
-        '
-        НомерПаспортаLabel.AutoSize = True
-        НомерПаспортаLabel.Location = New System.Drawing.Point(12, 141)
-        НомерПаспортаLabel.Name = "НомерПаспортаLabel"
-        НомерПаспортаLabel.Size = New System.Drawing.Size(96, 13)
-        НомерПаспортаLabel.TabIndex = 9
-        НомерПаспортаLabel.Text = "Номер Паспорта:"
         '
         'НомерПаспортаTextBox
         '
@@ -341,15 +384,6 @@ Partial Class frmTMC
         Me.НомерПаспортаTextBox.Size = New System.Drawing.Size(480, 20)
         Me.НомерПаспортаTextBox.TabIndex = 10
         '
-        'Кол_воLabel
-        '
-        Кол_воLabel.AutoSize = True
-        Кол_воLabel.Location = New System.Drawing.Point(12, 167)
-        Кол_воLabel.Name = "Кол_воLabel"
-        Кол_воLabel.Size = New System.Drawing.Size(44, 13)
-        Кол_воLabel.TabIndex = 11
-        Кол_воLabel.Text = "Кол-во:"
-        '
         'Кол_воTextBox
         '
         Me.Кол_воTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ТМЦBindingSource, "Кол-во", True))
@@ -358,15 +392,6 @@ Partial Class frmTMC
         Me.Кол_воTextBox.Size = New System.Drawing.Size(480, 20)
         Me.Кол_воTextBox.TabIndex = 12
         '
-        'ТекущаяЦенаLabel
-        '
-        ТекущаяЦенаLabel.AutoSize = True
-        ТекущаяЦенаLabel.Location = New System.Drawing.Point(12, 193)
-        ТекущаяЦенаLabel.Name = "ТекущаяЦенаLabel"
-        ТекущаяЦенаLabel.Size = New System.Drawing.Size(84, 13)
-        ТекущаяЦенаLabel.TabIndex = 13
-        ТекущаяЦенаLabel.Text = "Текущая Цена:"
-        '
         'ТекущаяЦенаTextBox
         '
         Me.ТекущаяЦенаTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ТМЦBindingSource, "ТекущаяЦена", True))
@@ -374,15 +399,6 @@ Partial Class frmTMC
         Me.ТекущаяЦенаTextBox.Name = "ТекущаяЦенаTextBox"
         Me.ТекущаяЦенаTextBox.Size = New System.Drawing.Size(480, 20)
         Me.ТекущаяЦенаTextBox.TabIndex = 14
-        '
-        'ЕденицаУчетаLabel
-        '
-        ЕденицаУчетаLabel.AutoSize = True
-        ЕденицаУчетаLabel.Location = New System.Drawing.Point(12, 219)
-        ЕденицаУчетаLabel.Name = "ЕденицаУчетаLabel"
-        ЕденицаУчетаLabel.Size = New System.Drawing.Size(86, 13)
-        ЕденицаУчетаLabel.TabIndex = 15
-        ЕденицаУчетаLabel.Text = "Еденица Учета:"
         '
         'ЕденицаУчетаTextBox
         '
@@ -416,51 +432,6 @@ Partial Class frmTMC
         Me.TabPage1.Text = "Приход"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
-        '
-        Me.TabPage2.AutoScroll = True
-        Me.TabPage2.Controls.Add(Me.ЧтоПеремещаетсяDataGridView)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(598, 185)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Переміщення"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'TabPage3
-        '
-        Me.TabPage3.AutoScroll = True
-        Me.TabPage3.Controls.Add(Me.ЧтоПереоцениваетсяDataGridView)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(598, 185)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Переоцінка"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TabPage4
-        '
-        Me.TabPage4.AutoScroll = True
-        Me.TabPage4.Controls.Add(Me.ЧтоСписываетсяDataGridView)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(598, 185)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Списання"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'ЧтоПиришлоBindingSource
-        '
-        Me.ЧтоПиришлоBindingSource.DataMember = "ТМЦЧтоПиришло"
-        Me.ЧтоПиришлоBindingSource.DataSource = Me.ТМЦBindingSource
-        '
-        'ЧтоПиришлоTableAdapter
-        '
-        Me.ЧтоПиришлоTableAdapter.ClearBeforeFill = True
-        '
         'ЧтоПиришлоDataGridView
         '
         Me.ЧтоПиришлоDataGridView.AutoGenerateColumns = False
@@ -473,32 +444,22 @@ Partial Class frmTMC
         Me.ЧтоПиришлоDataGridView.Size = New System.Drawing.Size(592, 179)
         Me.ЧтоПиришлоDataGridView.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn1
+        'ЧтоПиришлоBindingSource
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "№Документа"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "№Документа"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.ЧтоПиришлоBindingSource.DataMember = "ТМЦЧтоПиришло"
+        Me.ЧтоПиришлоBindingSource.DataSource = Me.ТМЦBindingSource
         '
-        'DataGridViewTextBoxColumn2
+        'TabPage2
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Цена"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Цена"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'ЧтоПеремещаетсяBindingSource
-        '
-        Me.ЧтоПеремещаетсяBindingSource.DataMember = "ТМЦЧтоПеремещается"
-        Me.ЧтоПеремещаетсяBindingSource.DataSource = Me.ТМЦBindingSource
-        '
-        'ЧтоПеремещаетсяTableAdapter
-        '
-        Me.ЧтоПеремещаетсяTableAdapter.ClearBeforeFill = True
+        Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.ЧтоПеремещаетсяDataGridView)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(598, 185)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Переміщення"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'ЧтоПеремещаетсяDataGridView
         '
@@ -512,32 +473,22 @@ Partial Class frmTMC
         Me.ЧтоПеремещаетсяDataGridView.Size = New System.Drawing.Size(592, 179)
         Me.ЧтоПеремещаетсяDataGridView.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn4
+        'ЧтоПеремещаетсяBindingSource
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "№Документа"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "№Документа"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.ЧтоПеремещаетсяBindingSource.DataMember = "ТМЦЧтоПеремещается"
+        Me.ЧтоПеремещаетсяBindingSource.DataSource = Me.ТМЦBindingSource
         '
-        'DataGridViewTextBoxColumn5
+        'TabPage3
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ЦенаПеремещения"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ЦенаПеремещения"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'ЧтоПереоцениваетсяBindingSource
-        '
-        Me.ЧтоПереоцениваетсяBindingSource.DataMember = "ТМЦЧтоПереоценивается"
-        Me.ЧтоПереоцениваетсяBindingSource.DataSource = Me.ТМЦBindingSource
-        '
-        'ЧтоПереоцениваетсяTableAdapter
-        '
-        Me.ЧтоПереоцениваетсяTableAdapter.ClearBeforeFill = True
+        Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.ЧтоПереоцениваетсяDataGridView)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(598, 185)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Переоцінка"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'ЧтоПереоцениваетсяDataGridView
         '
@@ -551,38 +502,22 @@ Partial Class frmTMC
         Me.ЧтоПереоцениваетсяDataGridView.Size = New System.Drawing.Size(575, 220)
         Me.ЧтоПереоцениваетсяDataGridView.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn7
+        'ЧтоПереоцениваетсяBindingSource
         '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "№Документа"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "№Документа"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.ЧтоПереоцениваетсяBindingSource.DataMember = "ТМЦЧтоПереоценивается"
+        Me.ЧтоПереоцениваетсяBindingSource.DataSource = Me.ТМЦBindingSource
         '
-        'DataGridViewTextBoxColumn8
+        'TabPage4
         '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "СтараяЦена"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "СтараяЦена"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "НоваяЦена"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "НоваяЦена"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'ЧтоСписываетсяBindingSource
-        '
-        Me.ЧтоСписываетсяBindingSource.DataMember = "ТМЦЧтоСписывается"
-        Me.ЧтоСписываетсяBindingSource.DataSource = Me.ТМЦBindingSource
-        '
-        'ЧтоСписываетсяTableAdapter
-        '
-        Me.ЧтоСписываетсяTableAdapter.ClearBeforeFill = True
+        Me.TabPage4.AutoScroll = True
+        Me.TabPage4.Controls.Add(Me.ЧтоСписываетсяDataGridView)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(598, 185)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Списання"
+        Me.TabPage4.UseVisualStyleBackColor = True
         '
         'ЧтоСписываетсяDataGridView
         '
@@ -596,23 +531,89 @@ Partial Class frmTMC
         Me.ЧтоСписываетсяDataGridView.Size = New System.Drawing.Size(592, 179)
         Me.ЧтоСписываетсяDataGridView.TabIndex = 0
         '
+        'ЧтоСписываетсяBindingSource
+        '
+        Me.ЧтоСписываетсяBindingSource.DataMember = "ТМЦЧтоСписывается"
+        Me.ЧтоСписываетсяBindingSource.DataSource = Me.ТМЦBindingSource
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "№Документа"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "№ Документа"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Інвенатрний номер"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Цена"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Ціна"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "№Документа"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "№ Документа"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Інвентарний номер"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ЦенаПеремещения"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Ціна перемцщення"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "№Документа"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "№ Документа"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Інвентарний номер"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "СтараяЦена"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Стара ціна"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "НоваяЦена"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Нова ціна"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "№Документа"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "№Документа"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "№ Документа"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         '
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "ИнвентарныйНомер"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "ИнвентарныйНомер"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Інвентарний номер"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         '
         'DataGridViewTextBoxColumn13
         '
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "ЦенаДоСписания"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "ЦенаДоСписания"
+        Me.DataGridViewTextBoxColumn13.HeaderText = ""
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.Visible = False
         '
         'frmTMC
         '
@@ -638,7 +639,7 @@ Partial Class frmTMC
         Me.Controls.Add(Me.ЕденицаУчетаTextBox)
         Me.Controls.Add(Me.ТМЦBindingNavigator)
         Me.Name = "frmTMC"
-        Me.Text = "frmTMC"
+        Me.Text = "ТМЦ"
         CType(Me.DbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ТМЦBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ТМЦBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -646,17 +647,17 @@ Partial Class frmTMC
         Me.ТМЦBindingNavigator.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage4.ResumeLayout(False)
-        CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ЧтоПиришлоDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ЧтоПиришлоBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
         CType(Me.ЧтоПеремещаетсяDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ЧтоПереоцениваетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ЧтоПеремещаетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
         CType(Me.ЧтоПереоцениваетсяDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ЧтоСписываетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ЧтоПереоцениваетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
         CType(Me.ЧтоСписываетсяDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ЧтоСписываетсяBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -696,24 +697,24 @@ Partial Class frmTMC
     Friend WithEvents ЧтоПиришлоBindingSource As BindingSource
     Friend WithEvents ЧтоПеремещаетсяTableAdapter As dbDataSetTableAdapters.ЧтоПеремещаетсяTableAdapter
     Friend WithEvents ЧтоПиришлоDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents ЧтоПеремещаетсяBindingSource As BindingSource
     Friend WithEvents ЧтоПереоцениваетсяTableAdapter As dbDataSetTableAdapters.ЧтоПереоцениваетсяTableAdapter
     Friend WithEvents ЧтоПеремещаетсяDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents ЧтоПереоцениваетсяBindingSource As BindingSource
     Friend WithEvents ЧтоСписываетсяTableAdapter As dbDataSetTableAdapters.ЧтоСписываетсяTableAdapter
     Friend WithEvents ЧтоПереоцениваетсяDataGridView As DataGridView
+    Friend WithEvents ЧтоСписываетсяBindingSource As BindingSource
+    Friend WithEvents ЧтоСписываетсяDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents ЧтоСписываетсяBindingSource As BindingSource
-    Friend WithEvents ЧтоСписываетсяDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
